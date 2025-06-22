@@ -10,8 +10,6 @@ function App() {
     setOpen(prev => !prev);
   };
 
-  console.log({ open });
-
   return (
     <div className={s.main}>
       <div className={s.mainContent}>

@@ -11,8 +11,8 @@ export const SidePanel = ({ courseId, resourceId, url }) => {
     <>
       <form
         name="panel"
-        method="get"
-        action={url}
+        method="post"
+        action={`${url}api/form-handler/${courseId}/${resourceId}`}
         ref={sidePanelRef}
         target="side-panel-frame"
         hidden={true}
