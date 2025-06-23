@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import s from './App.module.css'
 import { SidePanel } from './components/SidePanel';
@@ -9,6 +9,18 @@ function App() {
   const openSidePanel = () => {
     setOpen(prev => !prev);
   };
+
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data.name === 'from-side-panel') {
+        console.log("event data: ",event.data);
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => {
+      window.removeEventListener('message', handleMessage);
+    };
+  },[]);
 
   return (
     <div className={s.main}>
