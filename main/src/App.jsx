@@ -34,7 +34,7 @@ function App() {
         <SidePanel 
           courseId="123"
           resourceId="345"
-          url="http://localhost:3000/"
+          url="http://externalapp-local.com:3000/"
           onClose={openSidePanel}
         />
       </div>
